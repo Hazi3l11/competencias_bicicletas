@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compedici - Competencia de Bicicletas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/frontend/styles.css">
+</head>
+<body class="bg-[#0a0a0a] text-white font-sans">
+
+    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+        <div class="text-2xl font-bold tracking-tighter">COMPETICIONES</div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gray-400">
+            <a href="#" class="hover:text-white">Categorías</a>
+            <a href="#" class="hover:text-white">Cómo funciona</a>
+            <a href="#" class="hover:text-white">Por qué</a>
+        </div>
+        <a href="#registro" class="bg-[#d4ff00] text-black px-4 py-2 rounded-sm font-bold text-xs uppercase">Inscríbete ya</a>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2">
+            <span class="text-[#d4ff00] text-xs font-bold uppercase tracking-widest">Inscripciones abiertas 2026</span>
+            <h1 class="text-6xl md:text-8xl font-black uppercase leading-none mt-4">
+                Competencia <br> <span class="text-[#d4ff00]">de Bicicletas</span>
+            </h1>
+            <p class="text-gray-400 mt-6 max-w-md">
+                La competencia de ciclismo más emocionante para todos los niveles: amateur, semi-profesional y de alto rendimiento. Cronometraje en tiempo real y premiación.
+            </p>
+            <div class="mt-10 flex space-x-4">
+                <a href="#registro" class="bg-[#d4ff00] text-black px-8 py-3 font-bold uppercase">Inscríbete Ahora</a>
+                <button class="border border-gray-600 px-8 py-3 font-bold uppercase hover:bg-white hover:text-black transition">Ver más info</button>
+            </div>
+        </div>
+        
+        <div class="md:w-1/2 mt-12 md:mt-0 relative">
+            <div class="w-full h-80 bg-gradient-to-tr from-[#1a1a1a] to-[#d4ff00]/20 rounded-lg flex items-center justify-center border border-gray-800">
+                <span class="text-gray-500 italic">[ Imagen de Bicicleta ]</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-[#111] py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold uppercase mb-12">Encuentra tu <span class="text-[#d4ff00]">categoría</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-categoria p-8 border-l border-gray-800 bg-[#0f0f0f] hover:border-[#d4ff00] transition">
+                    <span class="text-4xl font-bold text-gray-800">01</span>
+                    <h3 class="text-xl font-bold mt-4 uppercase">Amateur</h3>
+                    <p class="text-gray-500 mt-2 text-sm">Para los que inician. Rutas accesibles y mucha diversión.</p>
+                </div>
+                <div class="card-categoria p-8 border-l border-gray-800 bg-[#0f0f0f] hover:border-[#d4ff00] transition">
+                    <span class="text-4xl font-bold text-gray-800">02</span>
+                    <h3 class="text-xl font-bold mt-4 uppercase text-[#d4ff00]">Semi-Pro</h3>
+                    <p class="text-gray-500 mt-2 text-sm">Para ciclistas con experiencia que buscan un reto mayor.</p>
+                </div>
+                <div class="card-categoria p-8 border-l border-gray-800 bg-[#0f0f0f] hover:border-[#d4ff00] transition">
+                    <span class="text-4xl font-bold text-gray-800">03</span>
+                    <h3 class="text-xl font-bold mt-4 uppercase">Alto Rendimiento</h3>
+                    <p class="text-gray-500 mt-2 text-sm">Nivel competitivo máximo. Solo para expertos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registro" class="py-24 max-w-4xl mx-auto px-6">
+        <div class="bg-[#1a1a1a] p-10 rounded-lg border border-gray-800">
+            <h2 class="text-4xl font-black uppercase text-center mb-2">Regístrate ahora</h2>
+            <p class="text-gray-400 text-center mb-10">Lleva tu nivel al siguiente escalón</p>
+            
+            <form id="formRegistro" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    
+                    <label class="block text-xs uppercase text-gray-500 mb-2 font-bold">Nombre Completo</label>-
+                    <input type="text" name="nombre" required class="w-full bg-black border border-gray-700 p-3 focus:border-[#d4ff00] outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-gray-500 mb-2 font-bold">Email</label>
+                    <input type="email" name="email" required class="w-full bg-black border border-gray-700 p-3 focus:border-[#d4ff00] outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-gray-500 mb-2 font-bold">Contraseña</label>
+                    <input type="password" name="password" required class="w-full bg-black border border-gray-700 p-3 focus:border-[#d4ff00] outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-gray-500 mb-2 font-bold">Categoría</label>
+                    <select name="categoria" class="w-full bg-black border border-gray-700 p-3 focus:border-[#d4ff00] outline-none">
+                        <option value="Amateur">Amateur</option>
+                        <option value="Semi-Pro">Semi-Pro</option>
+                        <option value="Alto Rendimiento">Alto Rendimiento</option>
+                    </select>
+                </div>
+                <div class="md:col-span-2 mt-4">
+                    <button type="submit" class="w-full bg-[#d4ff00] text-black font-black py-4 uppercase tracking-widest hover:bg-white transition">
+                        Confirmar Inscripción
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="p-10 text-center border-t border-gray-900 text-gray-600 text-xs uppercase tracking-widest">
+        &copy; 2026 Competencia de Bicicletas - Todos los derechos reservados.
+    </footer>
+    <script>
+document.getElementById("formRegistro").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const data = {
+        nombre: document.querySelector('[name="nombre"]').value,
+        email: document.querySelector('[name="email"]').value,
+        password: document.querySelector('[name="password"]').value,
+        categoria: document.querySelector('[name="categoria"]').value
+    };
+
+    try {
+        const response = await fetch("http://127.0.0.1:8000/usuarios", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert("Usuario registrado correctamente");
+        } else {
+            console.error(result);
+            alert("Error al registrar usuario");
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("Error de conexión con el servidor");
+    }
+});
+</script>
+</body>
+</html>
