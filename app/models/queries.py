@@ -1,15 +1,15 @@
 from app.db.database import get_connection
 
 # CREATE
-def crear_usuario(nombre, email, password, categoria):
+def crear_usuario(nombre, email, password, categoria, rol="usuario"):
     conn = get_connection()
     cursor = conn.cursor()
 
     query = """
-    INSERT INTO usuarios (nombre, email, password, categoria)
-    VALUES (%s, %s, %s, %s)
+    INSERT INTO usuarios (nombre, email, password, categoria, rol)
+    VALUES (%s, %s, %s, %s, %s)
     """
-    cursor.execute(query, (nombre, email, password, categoria))
+    cursor.execute(query, (nombre, email, password, categoria, rol))
     conn.commit()
 
     cursor.close()
@@ -43,16 +43,16 @@ def obtener_usuario(id):
 
 
 # UPDATE
-def actualizar_usuario(id, nombre, email, password, categoria):
+def actualizar_usuario(id, nombre, email, password, categoria, rol):
     conn = get_connection()
     cursor = conn.cursor()
 
     query = """
     UPDATE usuarios
-    SET nombre = %s, email = %s, password = %s, categoria = %s
+    SET nombre = %s, email = %s, password = %s, categoria = %s, rol = %s
     WHERE id = %s
     """
-    cursor.execute(query, (nombre, email, password, categoria, id))
+    cursor.execute(query, (nombre, email, password, categoria, rol, id))
     conn.commit()
 
     cursor.close()
@@ -69,3 +69,14 @@ def eliminar_usuario(id):
 
     cursor.close()
     conn.close()
+
+def obtener_usuario_por_email(email):
+    conn = get_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    cursor.execute("SELECT * FROM usuarios WHERE email = %s", (email,))
+    usuario = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+    return usuario
